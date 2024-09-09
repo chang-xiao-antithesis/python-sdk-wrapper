@@ -177,7 +177,7 @@ class antithesis_fallback_sdk():
             fh.write(f'{json.dumps(assertion_obj)}\n')
 
     def get_random_int(self, bytes = 1) -> int:
-        random_bytes = os.getrandom(bytes)
+        random_bytes = os.urandom(bytes)
         return int.from_bytes(random_bytes, byteorder='big')
 
     def setup_complete(self, details:dict = {}) -> None:
